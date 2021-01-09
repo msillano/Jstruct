@@ -2,7 +2,7 @@
 A java &lt;-> NSD tool, for documentation, education, reverse engeenering
 
 The program JStruct allows interactive editing of Java programs (v. 1.8) using structured blocks (NSD: Nassi-Shneiderman Diagrams) to implement the algorithms.
-The program provides graphical editing with copy, move, zoom, expand etc., comments for each block, javadoc structured or inline, import and export of java source files. It exporst images in various raster and vector formats. It offers high interactivity: tooltips and context menus, undo and redo functionality.
+The program provides graphical editing with copy, move, zoom, expand etc., comments for each block, javadoc structured or inline, import and export of java source files. It exports images in various raster and vector formats. It offers high interactivity: tooltips and context menus, undo and redo functionality.
 
 ![user interface](./help/resources/help001.gif)
 
