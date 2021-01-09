@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<jprogram code="&#34;// package and import&#34;,&#34;import java.util.Scanner; &#34;,&#34;import javax.swing.JOptionPane; &#34;" comment="&#34;Last line can contain some JStruct options on file basis,&#34;,&#34;replacing default user options in menu:Options:Export Java style:&#34;,&#34; - PROGRAMDOCONTOP: inline comments before the code line (default: on right)&#34;,&#34; - ADDJAVADOCEXTRA: adds missed Javadoc comments to all members&#34;,&#34; - ADDJAVADOCPUBLIC: adds missed Javadoc comments to public members&#34;,&#34; - ADDJAVADOCIMAGE: adds a NSD image reference to first Javadoc comment&#34;,&#34;   Uses the file &#60;javadocpath&#62;/resorces/&#60;filename&#62;.png.&#34;,&#34;   To create the graphic file do menu/export/picture/PNG.&#34;,&#34; - SETSOURCEVERSION: processes version and auto build number&#34;,&#34;example:&#34;,&#34;@JStructOptions:ADDJAVADOCEXTRA,PROGRAMDOCONTOP,SETSOURCEVERSION&#34;,&#34;note: Here JStruct can add some lines.&#34;,&#34;@source: D:\User\Documents\progetti2015\javaStruct\examples\FullUserTest\FullUserTest.nsd&#34;,&#34;@JStruct: 1.02.01 SAXParser: com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl 1.8&#34;" font="SansSerif" fontSize="14" >
+		<children>
+		<jclass code="&#34; class FullUserTest &#34;,&#34;   extends Object;&#34;,&#34;/* class global variables */&#34;,&#34;static final int MAX = 40;&#34;" comment="&#34;test class for JStruct.&#34;,&#34;This show styles and limits of code insert in JStruct blocks.&#34;,&#34;&#34;,&#34;&#60;h3&#62;General rules &#60;/h3&#62;&#34;,&#34;&#60;li&#62; JStruct is (usually) very tolerant.&#34;,&#34;&#60;li&#62; Sequence block allow multiline code: &#34;&#34;;&#34;&#34; mandatory for all but last line.&#34;,&#34;&#60;li&#62; Text in &#34;&#34;comments&#34;&#34; area: for Classes and Methods it is set for javadoc.&#34;,&#34;&#60;li&#62; &#34;&#34;/*  * /&#34;&#34; and &#34;&#34;//&#34;&#34; are allowed in Sequence code in almost any place.&#34;,&#34;&#60;li&#62; Comments are not allowed in conditions code.&#34;,&#34;&#60;li&#62; Parenthesis around conditions are optional, conditions can be splitted in multilines.&#34;,&#34;&#60;li&#62; User/local keywords (in menu:Options:Parser) for i/o are mandatories, other &#34;,&#34;optionals.&#34;,&#34;&#60;li&#62; Code fallows standard Java syntax (exception: i/o parenthesis use, see),&#34;,&#34;&#60;li&#62; Top level are Classes or Methods (special button to create).&#34;,&#34;&#60;li&#62; Classes can contain Classes or Methods&#34;,&#34;&#60;li&#62; For Enum, Interface use the Class block.&#34;,&#34;&#60;li&#62; For anonymous classes don't use the Class block: insert only the reqired code.&#34;,&#34;&#34;,&#34;&#60;h3&#62;More rules &#60;/h3&#62;&#34;,&#34;See block comments in JStruct using &#60;b&#62;menu:Diagram:show comments F2&#60;/b&#62;&#60;br&#62;&#34;,&#34; &#34;,&#34;&#60;h3&#62;More examples &#60;/h3&#62;&#34;,&#34;The files TestXX.java in /examples shows some special cases (enum, lambda, etc.)&#60;br&#62;&#34;,&#34;See also JStruct help.&#34;,&#34;&#34;,&#34;&#60;h3&#62;JStruct-aware version&#60;/h3&#62;&#34;,&#34;When the source code not changes in a parse-export cycle (FullUserTest is NOT JStruct-aware).&#34;,&#34;&#60;br&#62;note: Here JStruct can add some lines.&#34;" status="open" color="c7fea7" >
+			<methods>
+			<method code="&#34;main&#34;" comment="&#34;test for elements and syntax.&#34;,&#34;&#34;,&#34;This code is crazy: only a collection of test cases.&#34;,&#34;&#60;br&#62;The java exported code MUST compile&#34;,&#34;without errors.&#34;,&#34;&#60;br&#62;note: Only the main() method declaration can be short as here ('main').&#34;,&#34;&#60;br&#62;note: Here JStruct can add some lines.&#34;" status="open" color="ffa4a4" >
+				<body>
+					<instruction code="&#34;String s = leggi (&#34;&#34;Insert a number &#34;&#34; + '\u00BB');&#34;,&#34;int variabile1 = 0;&#34;" comment="&#34;Input rules (see menu:Options:Parser:Input):&#34;,&#34; 1) &#60;inputLocal&#62; &#60;strVar&#62;;&#34;,&#34;    &#34;&#34;input&#34;&#34; using console, no Parenthesis.&#34;,&#34;    (implementation: (new Scanner(System.in)).nextLine )&#34;,&#34;&#34;,&#34; 2)  &#60;strVar&#62; = &#60;inputLocal&#62; [(] &#60;prompMessaget&#62; [)] ;&#34;,&#34;     &#34;&#34;input&#34;&#34; as pop-up.&#34;,&#34;     (implementation: JOptionPane.showInputDialog )&#34;,&#34;&#34;,&#34; - &#34;&#34;input&#34;&#34; returns always a String.&#34;" color="ffffff" ></instruction>
+					<try code="&#34;try&#34;" comment="&#34;try - catch - finally block sample.&#34;,&#34;try rules:&#34;,&#34;&#34;&#34;try&#34;&#34; keyword: mandatory in code, don't change&#34;,&#34;try-with-resources:&#34;,&#34;try (&#60;resource-declaration&#62;[; &#60;resource-declaration&#62;]*)&#34;" color="a6d2fe" >
+						<qTry>
+							<instruction code="&#34;variabile1 = Integer.parseInt(s);&#34;" comment="&#34;from String to Int, can Trows Exception.&#34;" color="ffffff" ></instruction>
+						</qTry>
+						<catch code="&#34;catch&#34;,&#34;UnknownError | NumberFormatException e&#34;,&#34;Exception e&#34;,&#34;%&#34;" comment="&#34;catch rules:&#34;,&#34; 'catch'&#34;,&#34; [[(]&#60;ExcepionType&#62;[|&#60;ExcepionType&#62;]* &#60;varName&#62;[)]]&#34;,&#34; [[(]&#60;ExcepionType&#62;[|&#60;ExcepionType&#62;]* &#60;varName&#62;[)]]*&#34;,&#34; ['%']&#34;,&#34; - initial 'catch' mandatory&#34;,&#34; - list of catch Excepions like 'Exception e'&#34;,&#34; - accepts also multiples Exceptions&#34;,&#34; - '%' optional list end.&#34;,&#34; note: catch block can also be empty: it acts as placeholder, does not export code.&#34;,&#34; Empty catch code:&#34;,&#34;      'catch'&#34;,&#34;      [%]&#34;" color="a6d2fe" >
+							<qCatch>
+								<instruction code="&#34;stampa e&#34;" comment="&#34;Output rules (see menu:Options:Parser:Output):&#34;,&#34;&#60;outputLocal&#62; [(] &#60;message&#62; [)]&#34;,&#34; - &#34;&#34;Output&#34;&#34; a String in pop-up: use Parenthesis.&#34;,&#34;    (implementation: try-catch block and JOptionPane.showMessageDialog)&#34;,&#34; - &#34;&#34;Output&#34;&#34; a String using console: no Parenthesis.&#34;,&#34;    (implementation: System.out.println())&#34;" color="ffffff" ></instruction>
+							</qCatch>
+							<qCatch>
+							</qCatch>
+							<qCatch>
+							</qCatch>
+						</catch>
+						<finally code="&#34;finally&#34;" comment="&#34;'finally' keyword: mandatory in code, don't change&#34;" color="a6d2fe" >
+							<qFinally>
+								<instruction code="&#34;// nothing to do&#34;" comment="&#34;note: &#34;&#34;finally&#34;&#34; block can also be empty: it acts as placeholder, does not export code.&#34;,&#34;This &#34;&#34;finally&#34;&#34; code is exported because it not empty.&#34;" color="ffffff" ></instruction>
+							</qFinally>
+						</finally>
+					</try>
+					<instruction code="&#34;String t;&#34;" comment="" color="ffffff" ></instruction>
+					<instruction code="&#34;  t&#34;,&#34;  = &#34;,&#34;  leggi (&#34;&#34;Please input a value&#34;&#34;)&#34;" comment="&#34;test: code line splitted&#34;,&#34;Input using standard pop-up, ask message as parameter.&#34;" color="ffffff" ></instruction>
+					<instruction code="&#34;stampa  &#34;&#34;Insert   N\u00BA  &#34;&#34; + &#34;&#34;1         number:&#34;&#34;;&#34;" comment="&#34; test: for spaces in strings.&#34;,&#34; output in console (not parenthesis)&#34;" color="ffffff" ></instruction>
+					<instruction code="&#34;variabile1 += variabile1 / 3&#34;" comment="&#34;test: math&#34;" color="ffffff" ></instruction>
+					<instruction code="&#34;String u;&#34;,&#34;leggi u;&#34;" comment="&#34;Reads a String.&#34;,&#34;Uses console (no parenthesis).&#34;" color="ffffff" ></instruction>
+					<instruction code="&#34;int leggiOld = variabile1&#34;" comment="&#34;test: not special keywords &#34;,&#34; - leggiOld, endWhile, moreiffalse, positif, fortran;&#34;" color="ffffff" ></instruction>
+					<instruction code="&#34;int endWhile, moreiffalse, positif, fortran;&#34;" comment="&#34;test: variables and not java keywords&#34;" color="ffffff" ></instruction>
+					<alternative code="&#34;(variabile1 &#62;= 5) &amp;&amp; (variabile1 != 32)&#34;,&#34;?&#34;" comment="&#34;test:  for correct parenthesis () management in conditions.&#34;,&#34;Condition (if, while, do) rules (see menu:options:parser):&#34;,&#34;[&#60;pre&#62;] [(] &#60;condition&#62; [)] [&#60;post&#62;]&#34;,&#34; - &#60;pre&#62;, parenthesis, &#60;post&#62; are optionals&#34;,&#34;note: comments not allowed in code for conditions&#34;" color="dedddd" >
+						<qTrue>
+							<instruction code="&#34;stampa (&#34;&#34;maggiore di\&#34;&#34;\\  u 5\\\&#34;&#34; t  &#34;&#34;);&#34;" comment="&#34;test for '\' embedded in strings:&#34;,&#34;  t and u are not variables.&#34;,&#34;  Output on pop-up: uses parenthesis.&#34;,&#34;  This prints: 'maggiore di&#34;&#34;\  u 5\&#34;&#34; t '.&#34;" color="ffffff" ></instruction>
+						</qTrue>
+						<qFalse>
+							<case code="&#34;variabile1&#34;,&#34;2&#34;,&#34;4&#34;,&#34;%&#34;" comment="&#34;Multiple Selection (switch statement):&#34;,&#34;&#60;switch_variable&#62;&#34;,&#34;[&#60;case_value&#62;]*&#34;,&#34;%|default&#34;,&#34;&#34;,&#34;Last line:&#34;,&#34; %      = no default&#34;,&#34;default = default case&#34;,&#34;note: add 'break' in code where required&#34;" color="dedddd" >
+								<qCase>
+								</qCase>
+								<qCase>
+									<instruction code="&#34;stampa &#34;&#34;è 4&#34;&#34;;&#34;" comment="&#34;test for special chars (è)&#34;,&#34;here defaulr:windows-1252&#34;,&#34;Set Editor, JStruct to same encoding&#34;" color="ffffff" ></instruction>
+								</qCase>
+								<qCase>
+								</qCase>
+							</case>
+						</qFalse>
+					</alternative>
+					<instruction code="&#34;t = &#34;&#34;/* the string1 in t */&#34;&#34;;&#34;,&#34;t += &#34;&#34;// the string2 in t &#34;&#34;; // a comment for t&#34;,&#34;/* comment #2 */&#34;,&#34;t +=  variabile1 /* comment #3 */&#34;,&#34;/* last comment */ t += &#34;&#34;done&#34;&#34;;&#34;" comment="&#34;test: strings and comments mixed in code (unsafe)&#34;,&#34;note: comments will be extract from code.&#34;,&#34;note: only for Sequence code&#34;,&#34;note: it is not a good idea to put comments in code, because&#34;,&#34;      that makes the code not JStruct-aware&#34;" color="ffffff" ></instruction>
+					<instruction code="&#34;int[] myList = {3, 4, 5, 6}&#34;" comment="&#34;test: array initialization&#34;" color="ffffff" ></instruction>
+					<instruction code="&#34;int pippo = myList[3];&#34;" comment="&#34;variables initialization&#34;" color="ffffff" ></instruction>
+					<for code="&#34;int k = 10; k &#62; 5; k--&#34;" comment="&#34;FOR minimal: only the 'for()' expressions, not parenthesis&#34;" color="ffcc9c" >
+						<qFor>
+							<instruction code="&#34;variabile1 += k;&#34;,&#34;pippo -= k;&#34;" comment="&#34;test for += -=&#34;" color="ffffff" ></instruction>
+						</qFor>
+					</for>
+					<for code="&#34;for (&#34;,&#34;    int i = 0; &#34;,&#34;    i &#60;= variabile1;&#34;,&#34;    i++ )&#34;" comment="&#34;FOR alternative style&#34;" color="ffcc9c" >
+						<qFor>
+							<instruction code="&#34;pippo++&#34;" comment="" color="ffffff" ></instruction>
+						</qFor>
+					</for>
+					<for code="&#34;for (int d : myList)&#34;" comment="&#34; test: enanched FOR syntax&#34;" color="ffcc9c" >
+						<qFor>
+							<instruction code="&#34;stampa (d)&#34;" comment="&#34;output on pop-up&#34;" color="ffffff" ></instruction>
+						</qFor>
+					</for>
+					<while code="&#34;while (pippo &#62; 12)&#34;" comment="&#34; test while&#34;" color="c9c9ff" >
+						<qWhile>
+							<instruction code="&#34;pippo = (variabile1 &#62; 12) ? 3 : 10;&#34;" comment="&#34;test: conditional operator&#34;" color="ffffff" ></instruction>
+						</qWhile>
+					</while>
+					<repeat code="&#34;while pippo &#60; 3&#34;" comment="&#34;test do-while&#34;,&#34;'while' + &#60;condition&#62;, but not ()&#34;" color="a6d2fe" >
+						<qRepeat>
+							<instruction code="&#34;pippo++;&#34;" comment="" color="ffffff" ></instruction>
+						</qRepeat>
+					</repeat>
+					<while code="&#34;pippo &#60; 15&#34;" comment="&#34; only while condition&#34;" color="c9c9ff" >
+						<qWhile>
+							<instruction code="&#34;pippo   *=   (   2 + 3  )   ;&#34;" comment="&#34; test for spaces&#34;" color="ffffff" ></instruction>
+						</qWhile>
+					</while>
+					<call code="&#34;missedMethod();&#34;" comment="&#34;calling a not defined Method: JStruct java export creates stub.&#34;" color="ffa4a4"></call>
+					<instruction code="&#34;pippo = mySum(pippo, variabile1)&#34;" comment="&#34; test method call&#34;" color="ffffff" ></instruction>
+					<alternative code="&#34;(variabile1 = pippo) &#62; 0&#34;,&#34;?&#34;" comment="&#34;test: assignation in condition (allowed in java).&#34;,&#34;Will not export &#34;&#34;else&#34;&#34; code because it is empty. &#34;" color="dedddd" >
+						<qTrue>
+							<instruction code="&#34;pippo %= 12&#34;" comment="" color="ffffff" ></instruction>
+						</qTrue>
+						<qFalse>
+						</qFalse>
+					</alternative>
+					<instruction code="&#34;stampa (&#34;&#34;Values: pippo= &#34;&#34;+ pippo ) + (&#34;&#34; variable1= &#34;&#34; + variabile1);&#34;" comment="&#34;No popup: argument NOT in parethesis&#34;" color="ffffff" ></instruction>
+				</body>
+			</method>
+			<method code="&#34;static   int mySum(int a,int b)&#34;" comment="&#34; Methods must be full defined (exception: main())&#34;" status="open" color="d0fefe" >
+				<body>
+					<instruction code="&#34;return a + b;&#34;" comment="" color="ffffff" ></instruction>
+				</body>
+			</method>
+			</methods>
+		</jclass>
+		</children>
+	</jprogram>
