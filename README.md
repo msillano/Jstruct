@@ -13,4 +13,4 @@ JStruct can be used in the following ways:
 - **Tool add-on**: adding JStruct tool to an IDE (eg JCreator ) you add a graphical structured environment.
 - **Pretty-printer**: a passage of a source java file in JStruct (imports + exports) produces a standard formatted output.
 
-See help, source
+See help, source, javadoc
