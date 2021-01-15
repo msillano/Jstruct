@@ -14,3 +14,4 @@ JStruct can be used in the following ways:
 - **Pretty-printer**: a passage of a source java file in JStruct (imports + exports) produces a standard formatted output.
 
 See help, source, javadoc
+See also  https://sourceforge.net/projects/jstruct/
